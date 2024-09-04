@@ -1,11 +1,10 @@
 package com.mystation.mystation;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
@@ -22,14 +21,14 @@ public class UserController {
         return userService.findAll();
     }
 
-    @GetMapping("/{id}")
-    User getUserById(@PathVariable Integer id){
-        Optional<User> user = userService.findUserById(id);
-        if(user.isEmpty()){
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found.");
-        }
-        return user.get();
-    }
+//    @GetMapping("/{id}")
+//    User getUserById(@PathVariable Integer id){
+//        Optional<User> user = userService.findUserById(id);
+//        if(user.isEmpty()){
+//            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found.");
+//        }
+//        return user.get();
+//    }
 
 //    @ResponseStatus(HttpStatus.CREATED)
 //    @PostMapping
@@ -37,9 +36,9 @@ public class UserController {
 //        userRepository.save(user);
 //    }
 
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    @DeleteMapping("/{id}")
-    void delete(@PathVariable Integer id){
-        userService.deleteUser(id);
-    }
+//    @ResponseStatus(HttpStatus.ACCEPTED)
+//    @DeleteMapping("/{id}")
+//    void delete(@PathVariable Integer id){
+//        userService.deleteUser(id);
+//    }
 }

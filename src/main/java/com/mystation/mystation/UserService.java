@@ -3,7 +3,6 @@ package com.mystation.mystation;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -18,15 +17,15 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public Optional<User> findUserById(Integer id){
-        return userRepository.findById(id);
-    }
+//    public Optional<User> findUserById(Integer id){
+//        return userRepository.findById(id);
+//    }
 
 //    public void createUser(String userName){
 //        userRepository.save(userName);
 //    }
 
-    public void deleteUser(Integer id){
-        userRepository.deleteById(id);
-    }
+//    public void deleteUser(Integer id){
+//        userRepository.deleteById(id);
+//    }
 }
