@@ -1,7 +1,9 @@
-CREATE TABLE IF NOT EXISTS users(
-    id SERIAl PRIMARY KEY,
-    username varchar(255) NOT NULL
+CREATE TABLE users (
+	id uuid NOT NULL,
+	username varchar NOT NULL,
+	CONSTRAINT users_id PRIMARY KEY (id)
 );
+
 
 CREATE TABLE IF NOT EXISTS station(
     id SERIAl PRIMARY KEY,
